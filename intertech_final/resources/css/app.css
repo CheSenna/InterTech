@@ -5,3 +5,290 @@
 [x-cloak] {
     display: none;
 }
+
+
+
+  h1 {
+    margin: 0;
+    display: inline-block;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 75px;
+  }
+
+  .top-left {
+    position: absolute;
+    top: 148px;
+    left: 16px;
+  }
+
+  .left-centre {
+    position: absolute;
+    top: 226px;
+    left: 16px;
+  }
+
+  .animate, .animate span {
+    animation-duration: 3s;
+    animation-fill-mode: both;
+  }
+
+  .fadeInBottom { animation-name: fadeInBottom}
+  @keyframes fadeInBottom {
+    from {
+      opacity: 0;
+      transform: translateY(100%)
+    }
+    to {opacity: 1 }
+  }
+
+  .search-bar {
+    display: inline-block;
+    margin-left: 20px;
+    border: none;
+  }
+
+  .search-bar input[type="text"] {
+    padding: 10px;
+    width: 500px;
+    border-radius: 10px;
+    background-color: #efeffc;
+    border: none;
+  }
+
+  .search-bar .icon {
+    margin-left: 5px;
+    color: #1c1c1c;
+  }
+
+  .product-buttons {
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 5px;
+    
+  }
+
+  .product-buttons button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #c8f5ff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+  }
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .card {
+    width: 250px;
+    padding: 5px;
+    margin: 10px;
+    background-color: #efeffc;
+    transition: box-shadow 0.3s, transform 0.3s, opacity 0.3s;
+    border-radius: 10px;
+  }
+
+  .card:hover {
+    box-shadow:0 0 5px rgba(31, 19, 53, 0.2);
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  .card-content {
+    text-align: center;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .card-description {
+    margin-bottom: 10px;
+  }
+
+  .card-price {
+    font-weight: bold;
+  }
+
+  .deals-section {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .deals-section h2 {
+    margin-bottom: 10px;
+  }
+
+  .deals-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .deal-card {
+    width: 300px;
+    padding: 10px;
+    margin: 5px;
+    background-color: #efeffc;
+    transition: box-shadow 0.3s, transform 0.3s, opacity 0.3s;
+    border-radius: 10px;
+  }
+
+  .deal-card:hover {
+    box-shadow: 0 0 5px rgba(31, 19, 53, 0.2);
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  .deal-card-content {
+    text-align: center;
+  }
+
+  .deal-card-image {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 10px;
+  }
+
+  .deal-card-image1{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+
+  .deal-card-image2{
+    width: 75%;
+    height: 75%;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Menu bar styles */
+  .menu-bar {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background-color: #ffffff;
+    color: #fff;
+    transition: left 0.3s;
+    z-index: 999;
+  }
+
+  .menu-bar.active {
+    left: 0;
+  }
+
+  .menu-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+
+  .menu-bar ul li {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+  }
+
+  .menu-bar ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .menu-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    z-index: 999;
+  }
+
+  .menu-button:hover {
+    background-color: #888888;
+    border-radius: 5px;
+  }
+
+.sidenav {
+height: 100%; 
+width: 0; 
+position: fixed; 
+z-index: 1; 
+top: 0;
+right: 0;
+background-color: #c3f4ff;
+overflow-x: hidden; 
+padding-top: 60px; 
+transition: 0.5s; 
+}
+
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 32px;
+font-weight: bold;
+color: #0d1023;
+display: block;
+transition: 0.3s;
+}
+
+
+.sidenav a:hover {
+color: #5e60ca;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+left: 175px;
+font-size: 32px;
+margin-right: 50px;
+}
+
+#main {
+transition: margin-right .5s;
+padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
+
+.NavBar{
+text-align: left;
+}
+
+.navText{
+  display: none;
+}
