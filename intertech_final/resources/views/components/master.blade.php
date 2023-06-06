@@ -21,13 +21,19 @@
         <x-banner />
             <header class="bg-white text-black text-center p-5" x-data="{ menuStatus: false }">
                 <div>
-                    <h1 class="font-bold">InterTech Computers</h1>
+                    <h1 class="font-bold text-4xl">InterTech Computers</h1>
                     <div class="search-bar">
                         <input type="text" placeholder="Search...">
                     </div>
                 </div>
-            </header>
-        <div>
+                <div class="flex items-stretch">
+                    <nav class="navbar">
+                        <a href="#">Home</a>
+                        <a href="#">Products</a>
+                        <a href="#">About</a>
+                    <!-- Add more navigation links as needed -->
+                </nav>
+                <div class="text-right">
                     @if (Route::has('login'))
                             @auth
                                 <a href="{{ url('/dashboard') }}">Dashboard</a>
@@ -41,7 +47,7 @@
                     @endif
                 @auth
         </div>
-
+        <br>
                     <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
 
@@ -53,6 +59,7 @@
                     @endauth
                 </div>
             </div>
+            </header>
 
             <!-- Page Content -->
             <main>

@@ -1,4 +1,15 @@
 <x-master>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Styles -->
+        @livewireStyles
+
 <div class="container">
     <div class="animate fadeInBottom">
       <div class="top-left">The best place for</div>
@@ -11,24 +22,24 @@
   <div class="cards-container">
     <div class="card">
       <div class="card-content">
-        <img class="card-image" src="{{ asset('/images/keeb2.png') }}" alt="Product 1">
+        <img class="object-contain" src="{{ asset('/images/keeb2.png') }}" alt="Product 1">
         <h3 class="card-title">Keyboards</h3>
       </div>
     </div>
     <div class="card">
-      <div class="card-content">
+      <div class="content-center">
         <img class="card-image" src="{{ asset('/images/vr1.png') }}" alt="Product 2">
         <h3 class="card-title">VR Headset</h3>
       </div>
     </div>
     <div class="card">
-      <div class="card-content">
-        <img class="card-image" src="{{ asset('/images/headph.png') }}" alt="Product 3">
+      <div class="content-center">
+        <img class="card-image " src="{{ asset('/images/headph.png') }}" alt="Product 3">
         <h3 class="card-title">Headphones</h3>
       </div>
     </div>
     <div class="card">
-      <div class="card-content">
+      <div class="content-center">
         <img class="card-image" src="{{ asset('/images/mouse.png') }}" alt="Product 4">
         <h3 class="card-title">Gaming Mouse</h3>
       </div>
@@ -38,7 +49,7 @@
   <div class="deals-section">
     <h1>TODAY'S BEST DEALS</h1>
     <br>
-    <div class="deals-container">
+    <div class="deals-container flex items-stretch">
       <div class="deal-card">
         <div class="deal-card-content">
           <img class="deal-card-image1" src="{{ asset('/images/Lenovo.png') }}" alt="Deal 1">
