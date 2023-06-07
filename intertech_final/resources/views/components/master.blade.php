@@ -27,14 +27,14 @@
                     </div>
                 </div>
                 <div class="product-buttons">
-    <button>Today's Deals</button>
+    <button class="bg-">Today's Deals</button>
     <button>AMD Parts</button>
     <button>Intel Parts</button>
     <button>VR</button>
     <button>Storage</button>
     <button>Memory</button>
     <button>Networking</button>
-    <button>PC Accessories 1</button>
+    <button>PC Accessories</button>
     <button>Laptops</button>
     <button>Speakers</button>
     <button>Apple Products</button>
@@ -46,35 +46,33 @@
     <a href="Index.html">Profile</a>
     <br>
     @if (Route::has('login'))
-                    @auth
-                        <a href="{{ url('/dashboard') }}">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" >Log in</a>
+    @auth
+        <a href="{{ url('/dashboard') }}">Dashboard</a>
+        <form method="POST" action="{{ route('logout') }}" x-data>
+            @csrf
+            <x-dropdown-link href="{{ route('logout') }}"
+                @click.prevent="$root.submit();">
+                {{ __('Log Out') }}
+            </x-dropdown-link>
+        </form>
+    @else
+        <a href="{{ route('login') }}">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" >Register</a>
-                        @endif
-                    @endauth
-            @endif
-    <br>
-    <form method="POST" action="{{ route('logout') }}" x-data>
-                                @csrf
-
-                                <x-dropdown-link href="{{ route('logout') }}"
-                                         @click.prevent="$root.submit();">
-                                    {{ __('Log Out') }}
-                                </x-dropdown-link>
-                            </form>
-                            <br>
-    <a href="#">Contact Us</a>
+        @if (Route::has('register'))
+            <a href="{{ route('register') }}">Register</a>
+        @endif
+    @endauth
+@endif
+<br>
+<a href="#">Contact Us</a>
+<br>
+<a href="#">Contact Us</a>
         <br>
             </header>
-
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
-
             <footer>
                 &copy; 2023 InterTech - PC Parts Shop. All rights reserved.
             </footer>
