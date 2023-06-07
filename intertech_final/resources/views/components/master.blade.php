@@ -26,40 +26,48 @@
                         <input type="text" placeholder="Search...">
                     </div>
                 </div>
-                <div class="flex items-stretch">
-                <nav class="navbar">
-                        <a class="p-1" href="#">Home</a>
-                        <a class="p-1" href="#">Products</a>
-                        <a class="p-1" href="#">About</a>
-                        <a class="p-1" href="#">Account</a>
-                    <!-- Add more navigation links as needed -->
-                    </nav>
-                    @if (Route::has('login'))
-                            @auth
-                                <a href="{{ url('/dashboard') }}">Dashboard</a>
-                                @else
-                                    <a href="{{ route('login') }}" >Log in </a>
-                                <br>
-                                <br>
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" > Register</a>
-                            @endif
-                        @endauth
-                    @endif
-                @auth
-        </div>
-        <br>
-                    <form method="POST" action="{{ route('logout') }}" x-data>
+                <div class="product-buttons">
+    <button>Today's Deals</button>
+    <button>AMD Parts</button>
+    <button>Intel Parts</button>
+    <button>VR</button>
+    <button>Storage</button>
+    <button>Memory</button>
+    <button>Networking</button>
+    <button>PC Accessories 1</button>
+    <button>Laptops</button>
+    <button>Speakers</button>
+    <button>Apple Products</button>
+    <button><span class="NavBar" onclick="openNav()">Account</span></button>
+  </div>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="Index.html">Profile</a>
+    <br>
+    @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/dashboard') }}">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" >Log in</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" >Register</a>
+                        @endif
+                    @endauth
+            @endif
+    <br>
+    <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
 
-                                <a href="#"
-                                         x-on:click.prevent="$root.submit();">
+                                <x-dropdown-link href="{{ route('logout') }}"
+                                         @click.prevent="$root.submit();">
                                     {{ __('Log Out') }}
-                                </a>
+                                </x-dropdown-link>
                             </form>
-                    @endauth
-                </div>
-            </div>
+                            <br>
+    <a href="#">Contact Us</a>
+        <br>
             </header>
 
             <!-- Page Content -->
@@ -73,5 +81,6 @@
         </div>
         @stack('modals')
         @livewireScripts
+        <script src="{{ asset('Assets\script.js') }}"></script>
     </body>
 </html>
