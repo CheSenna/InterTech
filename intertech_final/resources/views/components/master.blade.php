@@ -27,21 +27,22 @@
                     </div>
                 </div>
                 <div class="flex items-stretch">
-                    <nav class="navbar">
-                        <a href="#">Home</a>
-                        <a href="#">Products</a>
-                        <a href="#">About</a>
+                <nav class="navbar">
+                        <a class="p-1" href="#">Home</a>
+                        <a class="p-1" href="#">Products</a>
+                        <a class="p-1" href="#">About</a>
+                        <a class="p-1" href="#">Account</a>
                     <!-- Add more navigation links as needed -->
-                </nav>
-                <div class="text-right">
+                    </nav>
                     @if (Route::has('login'))
                             @auth
                                 <a href="{{ url('/dashboard') }}">Dashboard</a>
                                 @else
-                                    <a href="{{ route('login') }}" >Log in</a>
-
+                                    <a href="{{ route('login') }}" >Log in </a>
+                                <br>
+                                <br>
                                 @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" >Register</a>
+                                    <a href="{{ route('register') }}" > Register</a>
                             @endif
                         @endauth
                     @endif
