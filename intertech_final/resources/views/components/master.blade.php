@@ -47,9 +47,9 @@
     <br>
     @if (Route::has('login'))
     @auth
-        <a href="{{ url('/dashboard') }}">Dashboard</a>
         <form method="POST" action="{{ route('logout') }}" x-data>
             @csrf
+
             <x-dropdown-link href="{{ route('logout') }}"
                 @click.prevent="$root.submit();">
                 {{ __('Log Out') }}
@@ -63,8 +63,6 @@
         @endif
     @endauth
 @endif
-<br>
-<a href="#">Contact Us</a>
 <br>
 <a href="#">Contact Us</a>
         <br>

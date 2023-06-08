@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Homecontroller;
+use App\Http\Livewire\Crud;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +18,14 @@ Route::get('/', function () {
 return view('Index_Gen');
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::get('/dashboard', [Homecontroller::class, 'checkUserType']);
 
-Route::resource(name:'tasks', controller:\App\Http\Controllers\TaskController::class); 
+Route::get('/admin/dashboard', function(){
+    return view('admin-dashboard');
+})->name('admin.dashboard');
+
+Route::get('/user/dashboard', function(){
+    return view('Index_Gen');
+})->name('user.home');
+
+Route::get('students', App\Http\Livewire\Crud::class);
